@@ -10,21 +10,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
-@CrossOrigin("*")
 @RestController
-@RequestMapping("/api/v1/employees")
+@RequestMapping("/employees")
 public class EmployeeController {
 
     @Autowired
     private EmployeeRepo employeeRepo;
 
-    @GetMapping("/AllEmployee")
+    @GetMapping
     public List<Employee> getAllEmployees(){
         return employeeRepo.findAll();
     }
 
-    @PostMapping("/addEmployee")
+    @PostMapping
     public Employee createEmployee(@RequestBody Employee employee){
         return employeeRepo.save(employee);
     }
