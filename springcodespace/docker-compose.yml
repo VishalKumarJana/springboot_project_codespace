@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: ems-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: springuser
+      MYSQL_DATABASE: ems
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  springboot-app:
+    build: .
+    container_name: ems-app
+    restart: always
+    ports:
+      - "8001:9999"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ems
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: springuser
+
+volumes:
+  mysql-data:
