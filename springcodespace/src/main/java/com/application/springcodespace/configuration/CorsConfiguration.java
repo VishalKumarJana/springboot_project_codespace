@@ -15,7 +15,7 @@ public class CorsConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
 
                 registry.addMapping("/**")
-                        .allowedOrigins("https://upgraded-space-couscous-974qrpj55g9x395wp-3000.app.github.dev")
+                        .allowedOrigins("https://react-frontend-3az7.onrender.com")
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .allowCredentials(true);
