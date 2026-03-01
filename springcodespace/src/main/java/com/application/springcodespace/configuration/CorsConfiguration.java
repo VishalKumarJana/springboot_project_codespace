@@ -15,8 +15,8 @@ public class CorsConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
 
                 registry.addMapping("/**")
-                        .allowedOrigins("https://react-frontend-3az7.onrender.com")
-                        .allowedMethods("*")
+                        .allowedOrigins("https://react-frontend-u4xd.onrender.com")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }

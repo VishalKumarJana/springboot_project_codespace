@@ -50,9 +50,4 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/path")
-    public String getMethodName() {
-        return "Hello CodeSpace message";
-    }
-
 }
